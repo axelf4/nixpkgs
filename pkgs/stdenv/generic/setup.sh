@@ -1018,7 +1018,7 @@ buildPhase() {
     # set to empty if unset
     : ${makeFlags=}
 
-    if [[ -z "$makeFlags" && -z "${makefile:-}" && ! ( -e Makefile || -e makefile || -e GNUmakefile ) ]]; then
+    if [[ -z "$makeFlags" && -z "$buildFlags" && -z "${makefile:-}" && ! ( -e Makefile || -e makefile || -e GNUmakefile ) ]]; then
         echo "no Makefile, doing nothing"
     else
         foundMakefile=1
